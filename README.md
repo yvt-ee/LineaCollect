@@ -27,15 +27,18 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [✔️] List anything else that you added to improve the site's functionality!
-
+- 
 ## Video Walkthrough
 
-**Note: please be sure to 
+**Note:** Please be sure to ...
 
-Here's a walkthrough of implemented required features:
+Here’s a walkthrough of the implemented required features:
 
-[<img src='https://lineacollect.s3.us-east-1.amazonaws.com/linea.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-](https://lineacollect.s3.us-east-1.amazonaws.com/linea.gif)
+[<img src="https://lineacollect.s3.us-east-1.amazonaws.com/linea.gif" 
+      title="Video Walkthrough" 
+      width="600" 
+      alt="Video Walkthrough" />](https://lineacollect.s3.us-east-1.amazonaws.com/linea.gif)
+
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with GIPHY CAPTURE
