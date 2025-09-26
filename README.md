@@ -32,12 +32,7 @@ The following **additional** features are implemented:
 
 **Note:** Please be sure to ...
 
-Here’s a walkthrough of the implemented required features:
-
-[<img src="https://lineacollect.s3.us-east-1.amazonaws.com/linea.gif" 
-      title="Video Walkthrough" 
-      width="600" 
-      alt="Video Walkthrough" />](https://lineacollect.s3.us-east-1.amazonaws.com/linea.gif)
+Here’s a walkthrough of the implemented required features: https://lineacollect.s3.us-east-1.amazonaws.com/linea.gif
 
 
 <!-- Replace this with whatever GIF tool you used! -->
