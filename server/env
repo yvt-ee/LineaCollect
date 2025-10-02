@@ -1,0 +1,5 @@
+PGDATABASE="lineacollect"
+PGHOST="dpg-d3eude1r0fns73d1qrcg-a.oregon-postgres.render.com"
+PGPASSWORD="5gjlNXAK61hIXQlQNkXjt3gYBD96QBLr"
+PGPORT=5432
+PGUSER="lineacollect_user"

@@ -1,17 +1,19 @@
 {
-  "name": "server",
+  "name": "lineacollect",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {
-     "start": "nodemon server.js" 
+    "start": "npm run reset && nodemon --require dotenv/config server.js",
+    "reset": "cd config && node --require dotenv/config reset.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.16.3"
   }
 }

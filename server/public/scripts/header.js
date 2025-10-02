@@ -13,7 +13,7 @@ const headerLogo = document.createElement('img')
 headerLogo.src = '/logo.png'
 
 const headerTitle = document.createElement('h1')
-headerTitle.textContent = 'Linea Collect'
+headerTitle.textContent = 'LineaCollect'
 
 headerLeft.appendChild(headerLogo)
 headerLeft.appendChild(headerTitle)
@@ -34,5 +34,4 @@ headerContainer.appendChild(headerLeft)
 headerContainer.appendChild(headerRight)
 
 header.appendChild(headerContainer)
-
 

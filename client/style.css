@@ -25,7 +25,7 @@
 
 .header-left h1 {
     float: right;
-    font-size: 45px;
+    font-size: 38px;
     
 }
 
@@ -136,7 +136,7 @@ main {
 
 /* Detail Page CSS*/
 
-.gift-info {
+.product-info {
     display: flex;
     flex-direction: row;
 }
@@ -150,6 +150,6 @@ main {
     width: 80%;
 }
 
-.gift-details {
+.product-details {
     width: 45vw;
 }

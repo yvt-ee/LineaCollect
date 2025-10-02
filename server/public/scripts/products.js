@@ -1,76 +1,58 @@
 const renderProducts = async () => {
+
     const response = await fetch('/products')
-    const data = await response.json();
+    const data = await response.json()
 
     const mainContent = document.getElementById('main-content')
 
-    if(data){
+    if (data) {
+
         data.map(product => {
             const card = document.createElement('div')
             card.classList.add('card')
+
             const topContainer = document.createElement('div')
             topContainer.classList.add('top-container')
+
             const bottomContainer = document.createElement('div')
             bottomContainer.classList.add('bottom-container')
+
             topContainer.style.backgroundImage = `url(${product.image})`
 
-            const name = document.createElement('h3')
-            name.textContent = product.name
-            bottomContainer.appendChild(name)
+            const brandName = document.createElement('h3')
+            brandName.textContent = product.brandName
+            bottomContainer.appendChild(brandName)
 
-            const price = document.createElement('p')
-            price.textContent = 'Price: ' + product.pricePoint
-            bottomContainer.appendChild(price)
+            const priceRange = document.createElement('p')
+            priceRange.textContent = 'Price Range: ' + product.priceRange
+            bottomContainer.appendChild(priceRange)
 
-            const audience = document.createElement('p')
-            audience.textContent = 'Product Audience: ' + product.audience
-            bottomContainer.appendChild(audience)
+            const category = document.createElement('p')
+            category.textContent = 'Category: ' + product.category
+            bottomContainer.appendChild(category)
 
-            const moreButton = document.createElement('a')
-            moreButton.href = `/products/${product.id}`
-            moreButton.textContent = 'Read More>'
-            moreButton.setAttribute('role', 'button')
-            bottomContainer.appendChild(moreButton)
+            const link = document.createElement('a')
+            link.textContent = 'Read More >'
+            link.setAttribute('role', 'button')
+            link.href = `/product.html?id=${product.id}`
+            bottomContainer.appendChild(link)
 
             card.appendChild(topContainer)
-            card.appendChild(bottomContainer)
+            card.appendChild(bottomContainer) 
             mainContent.appendChild(card)
-
         })
     }
-    else{
-        const heading = document.createElement('h2')
-        heading.textContent = "No Products Available"
-        mainContent.appendChild(heading)
+    else {
+        const message = document.createElement('h2')
+        message.textContent = 'No Products Available 😞'
+        mainContent.appendChild(message)
     }
-
 }
 
-const renderProduct = async() => {
-        const requestedID = parseInt(window.location.href.split('/').pop())
-        const response = await fetch('/products')
-        const data = await response.json()
+const requestedUrl = window.location.href.split('/').pop()
 
-        const productContent = document.getElementById('product-content')
-
-        let product
-        if(data)
-        {
-            product = data.find(product => product.id === requestedID)
-            document.getElementById('image').src = product.image
-            document.getElementById('name').textContent = product.name
-            document.getElementById('submittedBy').textContent = 'Submitted by: ' + product.submittedBy
-            document.getElementById('pricePoint').textContent = 'Price: ' + product.pricePoint
-            document.getElementById('audience').textContent = 'Great For: ' + product.audience
-            document.getElementById('description').textContent = product.description
-            document.title = `Linea Collect - ${product.name}`
-        }
-        else
-        {
-            const message = document.createElement('h2')
-            message.textContent = 'No Products Available'
-            productContent.appendChild(message)
-        }
+if (requestedUrl) {
+    window.location.href = '../404.html'
+} else {
+    renderProducts()
 }
-renderProducts()
-renderProduct()
