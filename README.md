@@ -32,7 +32,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://lineacollect.s3.us-east-1.amazonaws.com/linea.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+https://lineacollect.s3.us-east-1.amazonaws.com/web103w2.gif
+
+
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with GIPHY CAPTURE
