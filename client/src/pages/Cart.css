@@ -1,0 +1,258 @@
+/* =====================================
+   极简高端 · CART 页面
+   风格参考：COS / Aritzia / SSENSE / Zara
+===================================== */
+
+:root {
+  --text-main: #111;
+  --text-secondary: #666;
+  --border-light: #e5e5e5;
+  --hover-bg: #f7f7f7;
+  --radius: 10px;
+}
+
+/* ================================
+   Container
+================================ */
+.cart-container {
+  max-width: 880px;
+  margin: 60px auto;
+  padding: 0 16px;
+  color: var(--text-main);
+  letter-spacing: 0.2px;
+}
+
+.cart-loading,
+.cart-empty {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* ================================
+   List
+================================ */
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ================================
+   Cart Item
+================================ */
+.cart-item {
+  display: flex;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-light);
+  align-items: flex-start; /* 🔥 让整体更稳 */
+}
+
+/* Product Image */
+.cart-item-img {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.cart-item-img:hover {
+  opacity: 0.85;
+}
+
+/* ================================
+   Info Area
+================================ */
+.cart-info h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 10px;
+  cursor: pointer;
+}
+
+.cart-info h4:hover {
+  text-decoration: underline;
+}
+
+/* Price */
+.cart-price {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 14px 0 10px;
+}
+
+/* Price + Remove Row */
+.cart-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0 6px;
+}
+
+/* ================================
+   Variant Selector
+================================ */
+.variant-select {
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.variant-select::after {
+  content: "▾";
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.cart-variant-row {
+  position: relative;
+  margin: 4px 0;
+}
+
+.variant-dropdown {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  min-width: 140px;
+
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+
+  padding: 10px 12px;
+  z-index: 30;
+
+  animation: fadeInUp 0.15s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.variant-option {
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+
+  border: 1px solid var(--border-light);
+  background: #fafafa;
+
+  transition: 0.15s;
+}
+
+.variant-option:hover {
+  background: var(--hover-bg);
+}
+
+/* active style */
+.variant-option.active {
+  background: #111;
+  color: white;
+  border-color: #111;
+}
+
+/* ================================
+   Quantity
+================================ */
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 0;
+}
+
+.cart-qty button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.cart-qty button:hover {
+  background: #f3f3f3;
+}
+
+.cart-qty span {
+  width: 26px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* ================================
+   Remove (High-end link style)
+================================ */
+.cart-remove {
+  font-size: 13px;
+  color: var(--text-secondary); /* 🔥 去掉鲜红色 */
+  padding: 4px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  transition: opacity 0.2s ease;
+}
+
+.cart-remove:hover {
+  opacity: 0.6;
+}
+
+/* ================================
+   Summary
+================================ */
+.cart-summary {
+  margin-top: 60px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-light);
+}
+
+.cart-summary h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+/* Checkout */
+.checkout-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 0;
+
+  border-radius: var(--radius);
+  background: #111;
+  color: white;
+  font-size: 15px;
+
+  cursor: pointer;
+  border: none;
+
+  letter-spacing: 0.3px;
+  transition: opacity 0.25s ease;
+}
+
+.checkout-btn:hover {
+  opacity: 0.85;
+}

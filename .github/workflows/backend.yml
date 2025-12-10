@@ -1,0 +1,44 @@
+name: Deploy Backend (ECR + ECS)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "server/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build Docker image
+        run: |
+          cd server
+          docker build -t lineacollect-backend .
+
+      - name: Tag + Push to ECR
+        run: |
+          docker tag lineacollect-backend:latest ${{ secrets.ECR_URL }}:latest
+          docker push ${{ secrets.ECR_URL }}:latest
+
+      - name: Deploy to ECS
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: server/ecs-task.json
+          service: LineaCollectService
+          cluster: LineaCollectCluster
+          wait-for-service-stability: true

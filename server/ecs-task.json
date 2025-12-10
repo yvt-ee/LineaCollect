@@ -1,0 +1,43 @@
+{
+  "family": "LineaCollectTask",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "lineacollect-backend",
+      "image": "YOUR_ECR_URL:latest",
+
+      "portMappings": [
+        {
+          "containerPort": 3001,
+          "protocol": "tcp"
+        }
+      ],
+
+      "environment": [
+        { "name": "PORT", "value": "3001" },
+        { "name": "DATABASE_URL", "value": "YOUR_RDS" },
+        { "name": "AWS_REGION", "value": "us-east-1" },
+        { "name": "AWS_S3_BUCKET", "value": "lineacollect-images" }
+      ],
+
+      "secrets": [
+        { "name": "JWT_ACCESS_SECRET", "valueFrom": "arn:aws:secretsmanager:xx" },
+        { "name": "JWT_REFRESH_SECRET", "valueFrom": "arn:aws:secretsmanager:xx" },
+        { "name": "AWS_ACCESS_KEY_ID", "valueFrom": "arn:aws:secretsmanager:xx" },
+        { "name": "AWS_SECRET_ACCESS_KEY", "valueFrom": "arn:aws:secretsmanager:xx" }
+      ],
+
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/LineaCollect",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+/* ============================================
+   GLOBAL ADMIN THEME
+   ============================================ */
+
+.admin-page {
+  padding: 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Inter, system-ui, sans-serif;
+  color: #111;
+}
+
+/* HEADINGS */
+.admin-page h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #0c0c0c;
+}
+
+.admin-page h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+
+/* BUTTONS */
+.primary-btn,
+.secondary-btn,
+.danger-btn,
+.edit-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+/* 主按钮: 黑色 */
+.primary-btn {
+  background: #111;
+  color: white;
+}
+.primary-btn:hover {
+  background: #000;
+}
+
+/* 次按钮: 淡灰 */
+.secondary-btn {
+  background: #f3f3f3;
+  color: #111;
+  border: 1px solid #dcdcdc;
+}
+.secondary-btn:hover {
+  background: #e9e9e9;
+}
+
+/* 编辑按钮: 蓝色 */
+.edit-btn {
+  background: #2563eb;
+  color: white;
+}
+.edit-btn:hover {
+  background: #1d4ed8;
+}
+
+/* 删除按钮 */
+.danger-btn {
+  background: #e11d48;
+  color: white;
+}
+.danger-btn:hover {
+  background: #be123c;
+}
+
+/* BACK button */
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #2563eb;
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ============================================
+   PRODUCT LIST TABLE
+   ============================================ */
+
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.product-list th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fafafa;
+}
+
+.product-list td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 14px;
+}
+
+.product-list tr:hover td {
+  background: #fafafa;
+}
+
+.thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+/* ============================================
+   PRODUCT EDITOR LAYOUT
+   ============================================ */
+
+.editor {
+  padding: 20px 0;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* LEFT PANEL (form) */
+.form-panel {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.form-panel label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+.form-panel input,
+.form-panel select,
+.form-panel textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+.form-panel textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-panel input:focus,
+.form-panel select:focus,
+.form-panel textarea:focus {
+  outline: none;
+  border-color: #000;
+  background: white;
+}
+
+/* Save button */
+.save {
+  width: 100%;
+  margin-top: 16px;
+}
+
+/* RIGHT PANELS */
+.right-panels > * {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* ============================================
+   IMAGE MANAGER
+   ============================================ */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.image-box {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.image-box img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.image-controls button {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 0;
+}
+
+/* ============================================
+   VARIANT MANAGER
+   ============================================ */
+
+.variant-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.variant-table th {
+  text-align: left;
+  padding: 12px;
+  background: #fafafa;
+  font-size: 13px;
+  color: #444;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.variant-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.variant-table input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+}
+
+.variant-table input:focus {
+  border-color: #111;
+  background: white;
+}
